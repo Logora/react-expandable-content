@@ -1,2 +1,3 @@
-import ExpandableContent from './ExpandableContent'
-export default ExpandableContent
+import ExpandableContent from './ExpandableContent';
+
+export default ExpandableContent;
