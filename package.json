@@ -1,0 +1,94 @@
+{
+  "name": "react-text-collapse",
+  "version": "0.6.1",
+  "description": "React text collapse expand tool",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "webpack-dev-server -d --history-api-fallback --hot --inline --progress --colors --port 8080",
+    "prepublish": "npm run build:dist -s && npm run build:example -s",
+    "prebuild": "rimraf dist example build",
+    "build:dist": "babel src --out-dir dist --source-maps --ignore src/example",
+    "build:example": "webpack --config webpack.config.js",
+    "postbuild": "npm run test -s",
+    "test": "babel-node test/index.js | tnyan",
+    "coverage": "babel-node node_modules/isparta/bin/isparta cover test/index.js",
+    "coveralls": "npm run coverage -s && coveralls < coverage/lcov.info",
+    "postcoveralls": "rimraf ./coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cht8687/react-text-collapse.git"
+  },
+  "keywords": [
+    "react",
+    "react-component",
+    "component",
+    "react-text",
+    "react-text-collapse",
+    "react-text-expand",
+    "text",
+    "accordion",
+    "expand"
+  ],
+  "files": [
+    "dist"
+  ],
+  "author": "Robert Chang <cht8687@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cht8687/react-text-collapse/issues"
+  },
+  "homepage": "https://github.com/cht8687/react-text-collapse#readme",
+  "peerDependencies": {
+    "react": ">=0.14",
+    "react-motion": "^0.4 || ^0.5"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.1",
+    "@babel/node": "^7.0.0",
+    "@babel/plugin-syntax-object-rest-spread": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-eslint": "^9.0.0",
+    "babel-loader": "^8.0.2",
+    "babel-plugin-css-modules-transform": "^1.2.7",
+    "coveralls": "^3.0.2",
+    "css-loader": "^3.2.0",
+    "eslint": "^5.6.0",
+    "eslint-loader": "^2.1.0",
+    "eslint-plugin-react": "^7.11.1",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "html-webpack-plugin": "^3.2.0",
+    "isparta": "^4.0.0",
+    "mini-css-extract-plugin": "^0.4.2",
+    "prettier": "^2.0.5",
+    "react": "^16.13.1",
+    "react-code-blocks": "0.0.9-0",
+    "react-dom": "^16.13.1",
+    "react-hot-loader": "^1.2.9",
+    "react-motion": "^0.5.0",
+    "rimraf": "^2.4.3",
+    "snazzy": "^8.0.0",
+    "standard": "^7.1.2",
+    "tap-nyan": "0.0.2",
+    "tape": "^4.4.0",
+    "webpack": "^4.19.0",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.14"
+  },
+  "dependencies": {
+    "prop-types": "^15.5.10"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx,json,css,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  }
+}
