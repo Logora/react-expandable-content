@@ -63,8 +63,9 @@ const Link = styled.div`
 `;
 
 // TODO : Rotate svg when isExpanded
+// TODO : Pouvoir passer n'importe quelle valeur de hauteur
 
-const ExpandableContent = ({ children, collapseText, expandText, onCollapse, onExpand, className, maxHeightPx, maxHeightEm }) => {
+const ExpandableContent = ({ children, collapseText, expandText, onCollapse, onExpand, className, maxHeight }) => {
 	const [isExpanded, setIsExpanded] = useState(false);
 	const [contentHeight, setContentHeight] = useState(0);
 	const contentRef = useRef(null);
@@ -74,7 +75,7 @@ const ExpandableContent = ({ children, collapseText, expandText, onCollapse, onE
 	}, []);
 
 	const getContentHeight = () => {
-		// GET CONTENT HEIGHT IN PX
+		// Calculer la taille du contenu et comparer avec la props maxHeight passée
 		const heightPx = contentRef.current.clientHeight;
 		return Math.round(heightPx);
 	};
@@ -94,6 +95,11 @@ const ExpandableContent = ({ children, collapseText, expandText, onCollapse, onE
             <ContentBody maxHeightPx={maxHeightPx && maxHeightPx} maxHeightEm={maxHeightEm && maxHeightEm}>
                 { children }
             </ContentBody>
+			{/* 
+				Si le contenu est plus grand que la taille -> Lire plus
+				Si le contenu est expanded (plus grand que la taille) && déjà expanded -> Lire Moins
+				Si aucun des deux -> null
+			*/}
             { isExpanded ? (
 				<LinkContainer onClick={() => handleCollapse() }>
 					<Link className={className}>
@@ -124,6 +130,5 @@ ExpandableContent.propTypes = {
 	onCollapse: PropTypes.func,
 	onExpand: PropTypes.func,
 	className: PropTypes.string,
-	maxHeightPx: PropTypes.number,
-	maxHeightEm: PropTypes.number
+	maxHeight: PropTypes.string
 };
