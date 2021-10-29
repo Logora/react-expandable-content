@@ -1,2 +1,2 @@
-import ReactTextCollapse from './ReactTextCollapse'
-export default ReactTextCollapse
+import ExpandableContent from './ExpandableContent'
+export default ExpandableContent

@@ -1,11 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import ReactTextCollapse from '../src/index.js';
+import ExpandableContent from '../src/index.js';
 
 ReactDOM.render(
   <div>
     <p>You rendered the React module:</p>
-    <span>my module</span>
+    <ExpandableContent minHeight={100} maxHeight={200}>mon contenu</ExpandableContent>
   </div>,
   document.getElementById('app')
 )
