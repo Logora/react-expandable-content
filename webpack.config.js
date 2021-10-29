@@ -1,71 +1,30 @@
-var webpack = require('webpack')
-var HtmlWebpackPlugin = require('html-webpack-plugin')
-var path = require('path')
-var env = process.env.NODE_ENV || 'development'
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+var path = require('path');
+var webpack = require('webpack');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
+  entry: './public/index.js',
+  output: {
+    path: path.resolve(__dirname, 'lib'),
+    filename: 'index.js'
+  },
+  devServer: {
+    static: {
+      directory: path.join(__dirname, 'public'),
+    },
+    compress: true,
+    port: 8081,
+  },
   devtool: 'source-map',
-  entry: [
-    './src/example/example.js',
-    'webpack-dev-server/client?http://localhost:8080',
-    'webpack/hot/only-dev-server',
-  ],
-  output: { filename: 'bundle.js', path: path.resolve('example') },
-  plugins: [
-    new HtmlWebpackPlugin({
-      title: 'React-text-collapse',
-    }),
-    new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: '"' + env + '"',
-      },
-    }),
-    new webpack.HotModuleReplacementPlugin(),
-    new MiniCssExtractPlugin({
-      // Options similar to the same options in webpackOptions.output
-      // both options are optional
-      filename: '[name].css',
-      chunkFilename: '[id].css',
-    }),
-  ],
   module: {
     rules: [
       {
-        test: /\.js$/,
-        loaders: ['babel-loader'],
-        include: [path.resolve('src')],
-      },
-      {
-        test: /\.css$/,
-        use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              // you can specify a publicPath here
-              // by default it use publicPath in webpackOptions.output
-              publicPath: '../',
-            },
-          },
-          'css-loader',
-        ],
-      },
-      {
-        enforce: 'pre',
-        test: /\.js$/,
-        loaders: ['eslint-loader'],
-        include: [path.resolve('src')],
-      },
-    ],
+        test: /\.js?$/,
+        loader: 'babel-loader'
+      }
+    ]
   },
-  resolve: { extensions: ['.js'] },
-  stats: { colors: true },
-  devServer: {
-    hot: true,
-    historyApiFallback: true,
-    stats: {
-      chunkModules: false,
-      colors: true,
-    },
-  },
-}
+  plugins: [
+    //new ExtractTextPlugin('style.css')
+  ]
+};
