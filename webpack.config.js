@@ -7,7 +7,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 module.exports = {
   devtool: 'source-map',
   entry: [
-    './src/example/Example.js',
+    './src/example/example.js',
     'webpack-dev-server/client?http://localhost:8080',
     'webpack/hot/only-dev-server',
   ],
