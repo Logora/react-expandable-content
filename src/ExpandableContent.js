@@ -17,24 +17,25 @@ const Container = styled.div`
 `;
 
 const ContentBody = styled.div`
-    overflow: hidden;
 	${props => {
-        if (props.maxHeight) return `
-            max-height: ${props.maxHeight}px;
-        `
+		if (props.maxHeight < props.contentHeight) return `
+			max-height: ${props.maxHeight}px;
+			overflow: hidden;
+			&:after {
+				content: "";
+				position: absolute;
+				z-index: 1;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				pointer-events: none;
+				background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 90%);
+				width: 100%;
+				height: 5em;
+			}
+		`
     }}
-    &:after {
-        content: "";
-		position: absolute;
-		z-index: 1;
-		bottom: 0;
-		left: 0;
-		right: 0;
-		pointer-events: none;
-		background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 90%);
-		width: 100%;
-		height: 5em;
-    }
+	
 `;
 
 const LinkContainer = styled.div`
@@ -62,6 +63,9 @@ const Link = styled.div`
     align-items: center;
     z-index: 10;
     padding: 0 0.5em;
+	p {
+		color: black;
+	}
 `;
 
 // TODO : Pouvoir passer n'importe quelle valeur de hauteur
@@ -70,6 +74,7 @@ const ExpandableContent = ({ children, collapseText, expandText, onCollapse, onE
 	const [isExpanded, setIsExpanded] = useState(false);
 	const [contentHeight, setContentHeight] = useState(0);
 	const contentRef = useRef(null);
+	console.log(expandText, collapseText);
 
 	useEffect(() => {
 		setContentHeight(getContentHeight());
@@ -93,7 +98,7 @@ const ExpandableContent = ({ children, collapseText, expandText, onCollapse, onE
 
     return (
         <Container ref={contentRef}>
-            <ContentBody maxHeight={maxHeight}>
+            <ContentBody maxHeight={maxHeight} contentHeight={contentHeight}>
                 { children }
             </ContentBody>
 			{ contentHeight > maxHeight ? (
