@@ -3,10 +3,6 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import ArrowDownIcon from "./icons/ArrowDownIcon.svg";
 
-
-// TODO : Passer une className
-// TODO : Ré-usiner le composant
-
 const Container = styled.div`
     position: relative;
 `;
@@ -51,10 +47,8 @@ const Link = styled.div`
     z-index: 10;
 	margin: 0.5em;
     padding: 0 0.5em;
-	${props => !props.expanded} {
-		svg {
-			transform: rotate(180deg);
-		}
+	svg {
+		transform: ${props => props.expanded ? 'rotate(180deg)' : 'rotate(0)'};
 	}
 `;
 
@@ -94,14 +88,14 @@ const ExpandableContent = ({ children, expandable = true, expandText = "Read mor
 					<LinkContainer onClick={() => handleExpand()}>
 						<Link className={className}>
 							{ showIcon && <ArrowDownIcon height={16} width={16} /> }
-							<p>{expandText}</p>
+							<span>{expandText}</span>
 						</Link>
 					</LinkContainer> 
 					:
 					<LinkContainer onClick={() => handleCollapse() }>
 						<Link className={className} expanded={true}>
 							{ showIcon && <ArrowDownIcon height={16} width={16} /> }
-							<p>{collapseText}</p>
+							<span>{collapseText}</span>
 						</Link>
 					</LinkContainer>
 				)

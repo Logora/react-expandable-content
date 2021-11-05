@@ -15,7 +15,7 @@ module.exports = {
     filename: '[name].js',
   },
   devServer: {
-    contentBase: path.join(__dirname, 'dist'),
+    contentBase: path.join(__dirname, 'public'),
     compress: true
   },
   devtool: 'source-map',
@@ -42,7 +42,7 @@ module.exports = {
             loader: MiniCssExtractPlugin.loader,
             options: {
               publicPath: (resourcePath, context) => {
-                return path.relative(path.dirname(resourcePath), context) + "/css/";
+                return path.relative(path.dirname(resourcePath), context) + "/";
               },
             },
           },
