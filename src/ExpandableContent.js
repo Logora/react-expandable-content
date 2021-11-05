@@ -74,7 +74,6 @@ const ExpandableContent = ({ children, collapseText, expandText, onCollapse, onE
 	const [isExpanded, setIsExpanded] = useState(false);
 	const [contentHeight, setContentHeight] = useState(0);
 	const contentRef = useRef(null);
-	console.log(expandText, collapseText);
 
 	useEffect(() => {
 		setContentHeight(getContentHeight());
@@ -88,12 +87,12 @@ const ExpandableContent = ({ children, collapseText, expandText, onCollapse, onE
 
 	const handleCollapse = () => {
 		setIsExpanded(false);
-		onCollapse();
+		onCollapse && onCollapse();
 	}
 
 	const handleExpand = () => {
 		setIsExpanded(true);
-		onExpand();
+		onExpand && onExpand();
 	}
 
     return (
