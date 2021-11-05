@@ -3,14 +3,9 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import ArrowDownIcon from "./icons/ArrowDownIcon.svg";
 
-// TODO : Ajouter les callback functions
-// TODO : Rendre le contenu refermable
-// TODO : Passer du texte
+
 // TODO : Passer une className
-// TODO : Styliser avec styled-components
 // TODO : Ré-usiner le composant
-// TODO : Ajouter les propTypes
-// TODO : Importer l'icône
 
 const Container = styled.div`
     position: relative;
@@ -18,7 +13,7 @@ const Container = styled.div`
 
 const ContentBody = styled.div`
 	${props => {
-		if (props.maxHeight < props.contentHeight) return `
+		if (props.showExpandText) return `
 			max-height: ${props.maxHeight}px;
 			overflow: hidden;
 			&:after {
@@ -46,42 +41,35 @@ const LinkContainer = styled.div`
         cursor: pointer;
         color: black;
     };
-	svg {
-		${props => {
-			if (props.expanded) return `
-				transform: rotate(180deg);
-			`
-		}
-	}
 `;
 
 const Link = styled.div`
-    color: black;
     border-bottom: 1px solid black;
     display: flex;
     flex-direction: row;
     align-items: center;
     z-index: 10;
+	margin: 0.5em;
     padding: 0 0.5em;
-	p {
-		color: black;
+	${props => !props.expanded} {
+		svg {
+			transform: rotate(180deg);
+		}
 	}
 `;
 
-// TODO : Pouvoir passer n'importe quelle valeur de hauteur
-
-const ExpandableContent = ({ children, collapseText, expandText, onCollapse, onExpand, className, maxHeight }) => {
+const ExpandableContent = ({ children, expandable = true, expandText = "Read more", collapseText = "Read less", className, maxHeight = "100", showIcon = true, onCollapse = () => {}, onExpand = () => {}}) => {
 	const [isExpanded, setIsExpanded] = useState(false);
 	const [contentHeight, setContentHeight] = useState(0);
 	const contentRef = useRef(null);
-	console.log(expandText, collapseText);
 
 	useEffect(() => {
-		setContentHeight(getContentHeight());
+		if(expandable) {
+			setContentHeight(getContentHeight());
+		}
 	}, []);
 
 	const getContentHeight = () => {
-		// Calculer la taille du contenu et comparer avec la props maxHeight passée
 		const heightPx = contentRef.current.clientHeight;
 		return Math.round(heightPx);
 	};
@@ -98,26 +86,26 @@ const ExpandableContent = ({ children, collapseText, expandText, onCollapse, onE
 
     return (
         <Container ref={contentRef}>
-            <ContentBody maxHeight={maxHeight} contentHeight={contentHeight}>
+            <ContentBody maxHeight={maxHeight} showExpandText={expandable && !isExpanded && contentHeight > maxHeight}>
                 { children }
             </ContentBody>
-			{ contentHeight > maxHeight && 
-				( isExpanded ? (
+			{ expandable && contentHeight > maxHeight && (
+				( !isExpanded ?
 					<LinkContainer onClick={() => handleExpand()}>
 						<Link className={className}>
-							<ArrowDownIcon height={16} width={16} />
+							{ showIcon && <ArrowDownIcon height={16} width={16} /> }
 							<p>{expandText}</p>
 						</Link>
-					</LinkContainer>
-				) : (
+					</LinkContainer> 
+					:
 					<LinkContainer onClick={() => handleCollapse() }>
 						<Link className={className} expanded={true}>
-							<ArrowDownIcon height={16} width={16} />
+							{ showIcon && <ArrowDownIcon height={16} width={16} /> }
 							<p>{collapseText}</p>
 						</Link>
 					</LinkContainer>
-				))
-			}
+				)
+			)}
         </Container>
     )
 }
@@ -126,11 +114,13 @@ export default ExpandableContent;
 
 ExpandableContent.propTypes = {
 	children: PropTypes.any,
+	expandable: PropTypes.bool,
 	isExpanded: PropTypes.bool,
-	collapseText: PropTypes.string,
 	expandText: PropTypes.string,
+	collapseText: PropTypes.string,
+	className: PropTypes.string,
+	maxHeight: PropTypes.number,
+	showIcon: PropTypes.bool,
 	onCollapse: PropTypes.func,
 	onExpand: PropTypes.func,
-	className: PropTypes.string,
-	maxHeight: PropTypes.string
 };

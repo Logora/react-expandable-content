@@ -1,21 +1,27 @@
 var path = require('path');
 var webpack = require('webpack');
+var MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   target: "web",
   resolve: { 
     extensions: ['.js', '.jsx', '.svg'] 
   },
-  entry: path.join(__dirname, '/examples/index.js'),
+  entry: {
+    default: path.join(__dirname, '/examples/default.js')
+  },
   output: {
-    path: path.resolve(__dirname, 'public'),
-    filename: 'index.js',
+    path: path.resolve(__dirname, 'dist'),
+    filename: '[name].js',
   },
   devServer: {
-    contentBase: path.join(__dirname, 'public'),
+    contentBase: path.join(__dirname, 'dist'),
     compress: true
   },
   devtool: 'source-map',
+  plugins: [
+    new MiniCssExtractPlugin({ filename: "[name].css",}),
+  ],
   module: {
     rules: [
       {
@@ -29,8 +35,20 @@ module.exports = {
         test: /\.svg$/,
         use: ['@svgr/webpack'],
       },
+      {
+        test: /\.css$/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              publicPath: (resourcePath, context) => {
+                return path.relative(path.dirname(resourcePath), context) + "/css/";
+              },
+            },
+          },
+          "css-loader",
+        ],
+      },
     ]
   },
-  plugins: [
-  ]
 };
