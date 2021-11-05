@@ -3,9 +3,8 @@ var webpack = require('webpack');
 
 module.exports = {
   target: "web",
-  mode: 'production',
   resolve: { 
-    extensions: ['.js'] 
+    extensions: ['.js', '.jsx', '.svg'] 
   },
   entry: path.join(__dirname, '/src/index.js'),
   output: {
@@ -13,25 +12,23 @@ module.exports = {
     filename: 'index.js'
   },
   devServer: {
-    historyApiFallback: true,
-    static: {
-      directory: path.join(__dirname, 'public'),
-    },
-    compress: true,
-    port: 8081,
+    contentBase: path.join(__dirname, 'public'),
+    compress: true
   },
-  devtool: false,
+  devtool: 'source-map',
   module: {
     rules: [
       {
         test: /\.(js|jsx)?$/,
         exclude: /node_modules/,
-        loader: 'babel-loader'
+        use: {
+          loader: 'babel-loader',
+        }
       },
       {
         test: /\.svg$/,
-        exclude: /node_modules/,
         use: ['@svgr/webpack'],
+        
       },
     ]
   },

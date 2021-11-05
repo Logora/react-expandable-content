@@ -3,6 +3,15 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import ArrowDownIcon from "./icons/ArrowDownIcon.svg";
 
+// TODO : Ajouter les callback functions
+// TODO : Rendre le contenu refermable
+// TODO : Passer du texte
+// TODO : Passer une className
+// TODO : Styliser avec styled-components
+// TODO : Ré-usiner le composant
+// TODO : Ajouter les propTypes
+// TODO : Importer l'icône
+
 const Container = styled.div`
     position: relative;
 `;
