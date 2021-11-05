@@ -2,17 +2,6 @@ import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import ArrowDownIcon from "./icons/ArrowDownIcon.svg";
-import { NoEmitOnErrorsPlugin } from 'webpack';
-
-
-// TODO : Ajouter les callback functions
-// TODO : Rendre le contenu refermable
-// TODO : Passer du texte
-// TODO : Passer une className
-// TODO : Styliser avec styled-components
-// TODO : Ré-usiner le composant
-// TODO : Ajouter les propTypes
-// TODO : Importer l'icône
 
 const Container = styled.div`
     position: relative;
@@ -49,7 +38,14 @@ const LinkContainer = styled.div`
     &:hover {
         cursor: pointer;
         color: black;
-    }
+    };
+	svg {
+		${props => {
+			if (props.expanded) return `
+				transform: rotate(180deg);
+			`
+		}
+	}
 `;
 
 const Link = styled.div`
@@ -92,30 +88,26 @@ const ExpandableContent = ({ children, collapseText, expandText, onCollapse, onE
 
     return (
         <Container ref={contentRef}>
-            <ContentBody maxHeightPx={maxHeightPx && maxHeightPx} maxHeightEm={maxHeightEm && maxHeightEm}>
+            <ContentBody maxHeight={maxHeight}>
                 { children }
             </ContentBody>
-			{/* 
-				Si le contenu est plus grand que la taille -> Lire plus
-				Si le contenu est expanded (plus grand que la taille) && déjà expanded -> Lire Moins
-				Si aucun des deux -> null
-			*/}
-            { isExpanded ? (
-				<LinkContainer onClick={() => handleCollapse() }>
-					<Link className={className}>
-						<ArrowDownIcon height={16} width={16} />
-						<p>{collapseText}</p>
-					</Link>
-				</LinkContainer>
-            ) : contentHeight > maxHeight ? (
-              	<LinkContainer onClick={() => handleExpand()}>
+			{ contentHeight > maxHeight ? (
+				<LinkContainer onClick={() => handleExpand()}>
 					<Link className={className}>
 						<ArrowDownIcon height={16} width={16} />
 						<p>{expandText}</p>
 					</Link>
 				</LinkContainer>
-            ) 
-			: null }
+			)
+			: isExpanded ? (
+				<LinkContainer onClick={() => handleCollapse() }>
+					<Link className={className} expanded={true}>
+						<ArrowDownIcon height={16} width={16} />
+						<p>{collapseText}</p>
+					</Link>
+				</LinkContainer>
+			)
+			: null}
         </Container>
     )
 }
