@@ -8,8 +8,6 @@
     "build": "webpack --progress --config webpack.config.js --mode=production",
     "build:dist": "babel src --out-dir dist --source-maps --ignore src/example",
     "postbuild": "npm run test -s",
-    "test": "babel-node test/index.js | tnyan",
-    "coverage": "babel-node node_modules/isparta/bin/isparta cover test/index.js",
     "coveralls": "npm run coverage -s && coveralls < coverage/lcov.info"
   },
   "repository": {

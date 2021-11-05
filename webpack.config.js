@@ -8,8 +8,8 @@ module.exports = {
   },
   entry: path.join(__dirname, '/src/index.js'),
   output: {
-    path: path.resolve(__dirname, 'lib'),
-    filename: 'index.js'
+    path: path.resolve(__dirname, 'public'),
+    filename: 'index.js',
   },
   devServer: {
     contentBase: path.join(__dirname, 'public'),
@@ -28,7 +28,6 @@ module.exports = {
       {
         test: /\.svg$/,
         use: ['@svgr/webpack'],
-        
       },
     ]
   },
