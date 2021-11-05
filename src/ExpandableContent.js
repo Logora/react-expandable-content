@@ -96,23 +96,23 @@ const ExpandableContent = ({ children, collapseText, expandText, onCollapse, onE
             <ContentBody maxHeight={maxHeight}>
                 { children }
             </ContentBody>
-			{ contentHeight > maxHeight ? (
-				<LinkContainer onClick={() => handleExpand()}>
-					<Link className={className}>
-						<ArrowDownIcon height={16} width={16} />
-						<p>{expandText}</p>
-					</Link>
-				</LinkContainer>
-			)
-			: isExpanded ? (
-				<LinkContainer onClick={() => handleCollapse() }>
-					<Link className={className} expanded={true}>
-						<ArrowDownIcon height={16} width={16} />
-						<p>{collapseText}</p>
-					</Link>
-				</LinkContainer>
-			)
-			: null}
+			{ contentHeight > maxHeight && 
+				( isExpanded ? (
+					<LinkContainer onClick={() => handleExpand()}>
+						<Link className={className}>
+							<ArrowDownIcon height={16} width={16} />
+							<p>{expandText}</p>
+						</Link>
+					</LinkContainer>
+				) : (
+					<LinkContainer onClick={() => handleCollapse() }>
+						<Link className={className} expanded={true}>
+							<ArrowDownIcon height={16} width={16} />
+							<p>{collapseText}</p>
+						</Link>
+					</LinkContainer>
+				))
+			}
         </Container>
     )
 }
