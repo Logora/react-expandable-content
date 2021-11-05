@@ -1,5 +1,6 @@
 var path = require('path');
 var webpack = require('webpack');
+var MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   target: "web",
@@ -16,6 +17,9 @@ module.exports = {
     compress: true
   },
   devtool: 'source-map',
+  plugins: [
+    new MiniCssExtractPlugin({ filename: "[name].css",}),
+  ],
   module: {
     rules: [
       {
@@ -29,8 +33,20 @@ module.exports = {
         test: /\.svg$/,
         use: ['@svgr/webpack'],
       },
+      {
+        test: /\.css$/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              publicPath: (resourcePath, context) => {
+                return path.relative(path.dirname(resourcePath), context) + "/";
+              },
+            },
+          },
+          "css-loader",
+        ],
+      },
     ]
   },
-  plugins: [
-  ]
 };

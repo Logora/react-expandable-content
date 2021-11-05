@@ -1,0 +1,13 @@
+.className {
+  color: #777;
+  font-size: 12px;
+  border-bottom: 1px solid #777 !important;
+}
+
+.className > svg {
+  fill: #777 !important;
+}
+
+.className > span {
+  margin: 10px 0;
+}
