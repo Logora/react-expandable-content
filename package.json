@@ -4,7 +4,8 @@
   "description": "React text collapse expand tool",
   "main": "./lib/index.js",
   "scripts": {
-    "dev": "webpack serve --hot --progress",
+    "dev": "webpack serve --mode=development",
+    "build": "webpack --progress --config webpack.config.js --mode=production",
     "build:dist": "babel src --out-dir dist --source-maps --ignore src/example",
     "postbuild": "npm run test -s",
     "test": "babel-node test/index.js | tnyan",
@@ -40,14 +41,11 @@
     "prop-types": "^15.7.2"
   },
   "devDependencies": {
-    "@babel/cli": "^7.0.0",
-    "@babel/core": "^7.0.1",
-    "@babel/node": "^7.0.0",
-    "@babel/plugin-syntax-object-rest-spread": "^7.0.0",
-    "@babel/preset-env": "^7.0.0",
-    "@babel/preset-react": "^7.0.0",
+    "@babel/core": "^7.15.5",
+    "@babel/preset-env": "^7.15.6",
+    "@babel/preset-react": "^7.14.5",
     "babel-eslint": "^10.1.0",
-    "babel-loader": "^8.0.2",
+    "babel-loader": "^8.2.2",
     "babel-plugin-css-modules-transform": "^1.2.7",
     "coveralls": "^3.0.2",
     "cross-env": "^7.0.3",
@@ -55,12 +53,12 @@
     "@svgr/webpack": "^5.5.0",
     "eslint-loader": "^4.0.2",
     "eslint-plugin-react": "^7.11.1",
+    "styled-components": "^5.3.3",
     "html-webpack-plugin": "^5.5.0",
-    "react-hot-loader": "^4.13.0",
     "standard": "^16.0.4",
     "webpack": "^5.61.0",
-    "webpack-cli": "^4.9.1",
-    "webpack-dev-server": "^4.4.0"
+    "webpack-cli": "^4.8.0",
+    "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
     "react": "^17.0.2",

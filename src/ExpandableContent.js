@@ -2,8 +2,6 @@ import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import ArrowDownIcon from "./icons/ArrowDownIcon.svg";
-import { NoEmitOnErrorsPlugin } from 'webpack';
-
 
 // TODO : Ajouter les callback functions
 // TODO : Rendre le contenu refermable
