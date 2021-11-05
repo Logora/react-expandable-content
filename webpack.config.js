@@ -6,7 +6,7 @@ module.exports = {
   resolve: { 
     extensions: ['.js', '.jsx', '.svg'] 
   },
-  entry: path.join(__dirname, '/src/index.js'),
+  entry: path.join(__dirname, '/examples/index.js'),
   output: {
     path: path.resolve(__dirname, 'public'),
     filename: 'index.js',
