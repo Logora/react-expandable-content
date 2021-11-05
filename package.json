@@ -4,14 +4,12 @@
   "description": "React text collapse expand tool",
   "main": "./lib/index.js",
   "scripts": {
-    "dev": "webpack serve --hot --progress --mode development",
-    "prebuild": "rimraf dist example build",
+    "dev": "webpack serve --hot --progress",
     "build:dist": "babel src --out-dir dist --source-maps --ignore src/example",
     "postbuild": "npm run test -s",
     "test": "babel-node test/index.js | tnyan",
     "coverage": "babel-node node_modules/isparta/bin/isparta cover test/index.js",
-    "coveralls": "npm run coverage -s && coveralls < coverage/lcov.info",
-    "postcoveralls": "rimraf ./coverage"
+    "coveralls": "npm run coverage -s && coveralls < coverage/lcov.info"
   },
   "repository": {
     "type": "git",
@@ -39,7 +37,7 @@
   "homepage": "https://github.com/cht8687/react-text-collapse#readme",
   "peerDependencies": {
     "react": ">=0.14",
-    "react-motion": "^0.4 || ^0.5"
+    "prop-types": "^15.7.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0",
@@ -48,47 +46,25 @@
     "@babel/plugin-syntax-object-rest-spread": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
-    "babel-eslint": "^9.0.0",
+    "babel-eslint": "^10.1.0",
     "babel-loader": "^8.0.2",
     "babel-plugin-css-modules-transform": "^1.2.7",
     "coveralls": "^3.0.2",
     "cross-env": "^7.0.3",
-    "css-loader": "^3.2.0",
-    "eslint": "^5.6.0",
+    "eslint": "^8.1.0",
     "@svgr/webpack": "^5.5.0",
-    "eslint-loader": "^2.1.0",
+    "eslint-loader": "^4.0.2",
     "eslint-plugin-react": "^7.11.1",
-    "extract-text-webpack-plugin": "^3.0.2",
-    "html-webpack-plugin": "^3.2.0",
-    "isparta": "^4.0.0",
-    "mini-css-extract-plugin": "^0.4.2",
-    "prettier": "^2.0.5",
-    "react": "^16.13.1",
-    "react-code-blocks": "0.0.9-0",
-    "react-dom": "^16.13.1",
-    "react-hot-loader": "^1.2.9",
-    "react-motion": "^0.5.0",
-    "rimraf": "^2.4.3",
-    "snazzy": "^8.0.0",
-    "standard": "^7.1.2",
-    "tap-nyan": "0.0.2",
-    "tape": "^4.4.0",
+    "html-webpack-plugin": "^5.5.0",
+    "react-hot-loader": "^4.13.0",
+    "standard": "^16.0.4",
     "webpack": "^5.61.0",
     "webpack-cli": "^4.9.1",
     "webpack-dev-server": "^4.4.0"
   },
   "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "prop-types": "^15.7.2"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.{js,ts,tsx,json,css,md}": [
-      "prettier --write",
-      "git add"
-    ]
   }
 }
