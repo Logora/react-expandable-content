@@ -20,7 +20,7 @@ const ContentBody = styled.div`
     overflow: hidden;
 	${props => {
         if (props.maxHeight) return `
-            max-height: ${maxHeight}px;
+            max-height: ${props.maxHeight}px;
         `
     }}
     &:after {
