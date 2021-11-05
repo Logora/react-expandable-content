@@ -19,11 +19,8 @@ const Container = styled.div`
 const ContentBody = styled.div`
     overflow: hidden;
 	${props => {
-        if (props.maxHeightPx) return `
+        if (props.maxHeight) return `
             max-height: ${maxHeight}px;
-        `
-		if (props.maxHeightEm) return `
-            max-height: ${maxHeight}em;
         `
     }}
     &:after {
@@ -67,7 +64,6 @@ const Link = styled.div`
     padding: 0 0.5em;
 `;
 
-// TODO : Rotate svg when isExpanded
 // TODO : Pouvoir passer n'importe quelle valeur de hauteur
 
 const ExpandableContent = ({ children, collapseText, expandText, onCollapse, onExpand, className, maxHeight }) => {
