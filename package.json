@@ -1,39 +1,37 @@
 {
-  "name": "react-text-collapse",
-  "version": "0.6.1",
+  "name": "react-expandable-content",
+  "version": "0.2.0",
   "description": "React text collapse expand tool",
-  "main": "./lib/index.js",
+  "main": "./src/index.js",
   "scripts": {
     "dev": "webpack serve --mode=development",
     "build": "webpack --progress --config webpack.config.js --mode=production",
-    "build:dist": "babel src --out-dir dist --source-maps --ignore src/example",
     "postbuild": "npm run test -s",
     "coveralls": "npm run coverage -s && coveralls < coverage/lcov.info"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cht8687/react-text-collapse.git"
+    "url": "git+https://github.com/Logora/react-expandable-content"
   },
   "keywords": [
     "react",
     "react-component",
     "component",
-    "react-text",
-    "react-text-collapse",
-    "react-text-expand",
+    "react-expandable-content",
+    "text-collapse",
+    "text-expand",
     "text",
     "accordion",
-    "expand"
+    "collapsible-component"
   ],
   "files": [
     "dist"
   ],
-  "author": "Robert Chang <cht8687@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/cht8687/react-text-collapse/issues"
+    "url": "https://github.com/Logora/react-expandable-content/issues"
   },
-  "homepage": "https://github.com/cht8687/react-text-collapse#readme",
+  "homepage": "https://github.com/Logora/react-expandable-content#readme",
   "peerDependencies": {
     "prop-types": "^15.7.2",
     "react": ">=0.14"
