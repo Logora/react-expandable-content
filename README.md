@@ -6,6 +6,7 @@ React component to enable text collapse based on a certain height
 
 - [Installation](#installation)
 - [Usage](#usage)
+- [Examples](#examples)
 - [Props](#props)
   - [expandable](#expandable)
   - [expandText](#expandtext)
@@ -31,7 +32,7 @@ yarn add react-expandable-content
 
 ## Usage
 
-ExpandableContent can receive any HTML elements or React component as its children.
+ExpandableContent can receive any HTML elements or React components as its children.
 
 ```
 import React from 'react';
@@ -52,6 +53,10 @@ const App = () => {
 
 export default App;
 ```
+
+## Examples
+
+[Code Examples](https://github.com/Logora/react-expandable-content/blob/master/src/examples/default.js)
 
 ## Props
 
