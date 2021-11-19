@@ -8,6 +8,7 @@ pids
 *.seed
 
 /dist/
+/dist-example/
 
 node_modules
 
