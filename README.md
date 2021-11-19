@@ -56,7 +56,7 @@ export default App;
 
 ## Examples
 
-[Code Examples](https://github.com/Logora/react-expandable-content/blob/master/src/examples/default.js)
+[Code Examples](https://github.com/Logora/react-expandable-content/blob/master/examples/default.js)
 
 ## Props
 
