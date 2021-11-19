@@ -1,12 +1,11 @@
 {
-  "name": "react-text-collapse",
-  "version": "1.0.0",
-  "description": "React component to enable text collapse based on a certain height",
+  "name": "react-expandable-content",
+  "version": "0.2.0",
+  "description": "React text collapse expand tool",
   "main": "./src/index.js",
   "scripts": {
     "dev": "webpack serve --mode=development",
     "build": "webpack --progress --config webpack.config.js --mode=production",
-    "build:dist": "babel src --out-dir dist --source-maps --ignore src/example",
     "postbuild": "npm run test -s",
     "coveralls": "npm run coverage -s && coveralls < coverage/lcov.info"
   },
@@ -18,17 +17,16 @@
     "react",
     "react-component",
     "component",
-    "react-text",
-    "react-text-collapse",
-    "react-text-expand",
+    "react-expandable-content",
+    "text-collapse",
+    "text-expand",
     "collapsible",
     "accordion",
-    "expand"
+    "collapsible-component"
   ],
   "files": [
     "dist"
   ],
-  "author": "Robert Chang <cht8687@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Logora/react-expandable-content/issues"
