@@ -5,7 +5,7 @@
   React component to enable text collapse based on a certain height
 </p>
 <p align="center">
-  ![](react-expandable-content.gif) / ![](example.gif)
+  ![Alt text](react-expandable-content.gif) / ![](example.gif)
 </p>
 
 ## Table of Contents
