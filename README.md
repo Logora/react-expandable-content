@@ -33,6 +33,6 @@
 
 | props  	| default  	|  type 	| usage |
 |---	|---	|---	|---  |
-|   expandable	|  true 	| boolean 	| Enable your content to be expanded    |
-|   	|   	|   	|     |
-|   	|   	|   	|     |
+|  expandable	|  true 	| boolean 	| Enable your content to be expanded    |
+|  expandText 	|  "Read more" 	|  string 	|  Text displayed when your content is collapsed    |
+|  collapseText 	|   "Read less"	|  string 	| Text displayed when your content is expanded    |
