@@ -76,4 +76,11 @@ export default App;
 
 ## License
 
+## Contributors
+
+<a href="https://github.com/Logora/react-expandable-content/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Logora/react-expandable-content" />
+</a>
+
+
 MIT
