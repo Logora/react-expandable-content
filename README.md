@@ -31,8 +31,8 @@
  
 
 
-|   	|   	|   	|   	|   	|
-|---	|---	|---	|---	|---	|
-|   	|   	|   	|   	|   	|
-|   	|   	|   	|   	|   	|
-|   	|   	|   	|   	|   	|
+| props  	| default  	|  usage 	|
+|---	|---	|---	|
+|   expandable	|  true 	| Enable your content to be expanded  	|
+|   	|   	|   	|
+|   	|   	|   	|
