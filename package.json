@@ -1,7 +1,7 @@
 {
   "name": "react-expandable-content",
-  "version": "0.2.0",
-  "description": "React text collapse expand tool",
+  "version": "1.0.0",
+  "description": "React component to enable text collapse based on a certain height",
   "main": "./src/index.js",
   "scripts": {
     "dev": "webpack serve --mode=development",
