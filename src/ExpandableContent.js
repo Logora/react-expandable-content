@@ -23,7 +23,7 @@ const ContentBody = styled.div`
 				left: 0;
 				right: 0;
 				pointer-events: none;
-				background-image: ${props.isDarkMode ? 
+				background-image: ${props.darkMode ? 
 						'linear-gradient(to bottom, rgba(187, 187, 187, 0), rgba(0, 0, 0, 1) 90%)' 
 					: 
 						'linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 90%)'
