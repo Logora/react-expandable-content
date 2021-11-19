@@ -1,8 +1,8 @@
 {
   "name": "react-text-collapse",
-  "version": "0.6.1",
-  "description": "React text collapse expand tool",
-  "main": "./lib/index.js",
+  "version": "1.0.0",
+  "description": "React component to enable text collapse based on a certain height",
+  "main": "./src/index.js",
   "scripts": {
     "dev": "webpack serve --mode=development",
     "build": "webpack --progress --config webpack.config.js --mode=production",
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cht8687/react-text-collapse.git"
+    "url": "git+https://github.com/Logora/react-expandable-content.git"
   },
   "keywords": [
     "react",
@@ -21,7 +21,7 @@
     "react-text",
     "react-text-collapse",
     "react-text-expand",
-    "text",
+    "collapsible",
     "accordion",
     "expand"
   ],
@@ -31,12 +31,12 @@
   "author": "Robert Chang <cht8687@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/cht8687/react-text-collapse/issues"
+    "url": "https://github.com/Logora/react-expandable-content/issues"
   },
-  "homepage": "https://github.com/cht8687/react-text-collapse#readme",
+  "homepage": "https://github.com/Logora/react-expandable-content#readme",
   "peerDependencies": {
-    "prop-types": "^15.7.2",
-    "react": ">=0.14"
+    "react": "~15 || ~16 || ~17",
+    "react-dom": "~15 || ~16 || ~17"
   },
   "devDependencies": {
     "@babel/core": "^7.15.5",
@@ -59,9 +59,7 @@
     "styled-components": "^5.3.3",
     "webpack": "^5.61.0",
     "webpack-cli": "^4.8.0",
-    "webpack-dev-server": "^3.11.2"
-  },
-  "dependencies": {
+    "webpack-dev-server": "^3.11.2",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
