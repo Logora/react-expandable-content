@@ -16,9 +16,6 @@
   - [onCollapse](#oncollapse)
   - [onExpand](#onexpand)
 - [Styling and Customization](#styling-and-customization)
-  - [Using default styles](#default-styles)
-  - [Customizing with Bootstrap, Material Design styles](#customizing-styles)
-- [Development](#development)
 - [License](#license)
 - [Contributors](#contributors)
 
@@ -27,3 +24,8 @@
 ## Install
 
 ## Demo
+
+## Usage
+
+## Props
+#expandable
