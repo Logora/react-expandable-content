@@ -1,10 +1,10 @@
 ## react-expandable-content
 
+React component to enable text collapse based on a certain height
+
 ## Table of Contents
 
-- [Screenshot](#screenshot)
-- [Install](#install)
-- [Demo](#demo)
+- [Installation](#installation)
 - [Usage](#usage)
 - [Props](#props)
   - [expandable](#expandable)
@@ -19,17 +19,41 @@
 - [License](#license)
 - [Contributors](#contributors)
 
-## Screenshot
+## Installation
 
-## Install
+Install via npm or yarn
 
-## Demo
+```
+npm install react-expandable-content --save
+
+yarn add react-expandable-content
+```
 
 ## Usage
 
-## Props
- 
+ExpandableContent can receive any HTML elements or React component as its children.
 
+```
+import React from 'react';
+import ExpandableContent from 'react-expandable-content';
+
+const App = () => {
+  return (
+    <ExpandableContent maxHeight={100} collapseText={"Read less"} expandText={"Read more"}>
+      <p>
+        This content will be collapsed. It can be any kind of HTML or React components.
+      </p>
+      <p>
+        Another section that will be collapsed.
+      </p>
+    </ExpandableContent>
+  );
+};
+
+export default App;
+```
+
+## Props
 
 | props  	| default  	|  type 	| usage |
 |---	|---	|---	|---  |
@@ -41,3 +65,7 @@
 |  showIcon 	|   true	|  boolean 	| Whether the dropdown icon is displayed    |
 |  onCollapse 	|  null 	|  func 	| Callback function when content collapsing is triggered    |
 |  onExpand 	|   null	|  func 	| Callback function when content expansion is triggered    |
+
+## License
+
+MIT
