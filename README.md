@@ -3,7 +3,7 @@
 ## react-expandable-content
 React component to enable text collapse based on a certain height
 
-![](react-expandable-content.gif) / ![](example.gif)
+![](example.gif)
 
 ## Table of Contents
 
