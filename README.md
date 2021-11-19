@@ -64,14 +64,14 @@ export default App;
 
 | props  	| default  	|  type 	| usage |
 |---	|---	|---	|---  |
-|  expandable	|  true 	| boolean 	| Enable your content to be expanded    |
-|  expandText 	|  "Read more" 	|  string 	|  Text displayed when your content is collapsed    |
-|  collapseText 	|   "Read less"	|  string 	| Text displayed when your content is expanded    |
-|  className 	|   null	|  ? 	| CSS class ...    |
-|  maxHeight 	|   :x:	|  integer 	| Max height for your collapsed content  |
-|  showIcon 	|   true	|  boolean 	| Whether the dropdown icon is displayed    |
-|  onCollapse 	|  null 	|  func 	| Callback function when content collapsing is triggered    |
-|  onExpand 	|   null	|  func 	| Callback function when content expansion is triggered    |
+|  expandable	|  true 	| boolean 	| Enable content to be expanded    |
+|  expandText 	|  "Read more" 	|  string 	|  Text to display when content is collapsed    |
+|  collapseText 	|   "Read less"	|  string 	| Text to display when content is expanded    |
+|  className 	|   null	|  string 	| CSS class applied to the expandable part |
+|  maxHeight 	|   :x:	|  integer 	| Max height in pixels for your collapsed content  |
+|  showIcon 	|   true	|  boolean 	| Whether the dropdown icon should be displayed    |
+|  onCollapse 	|  null 	|  func 	| Callback function triggered when content is collapsed    |
+|  onExpand 	|   null	|  func 	| Callback function triggered when content is expanded     |
 
 ## License
 
