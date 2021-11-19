@@ -19,7 +19,7 @@ React component to enable text collapse based on a certain height
 
 Install via npm or yarn
 
-```
+```javascript
 npm install react-expandable-content --save
 
 yarn add react-expandable-content
