@@ -11,14 +11,6 @@ React component to enable text collapse based on a certain height
 - [Usage](#usage)
 - [Examples](#examples)
 - [Props](#props)
-  - [expandable](#expandable)
-  - [expandText](#expandtext)
-  - [collapseText](#collapsetext)
-  - [className](#classname)
-  - [maxHeight](#maxheight)
-  - [showIcon](#showIcon)
-  - [onCollapse](#oncollapse)
-  - [onExpand](#onexpand)
 - [Styling and Customization](#styling-and-customization)
 - [License](#license)
 - [Contributors](#contributors)
@@ -63,16 +55,17 @@ export default App;
 
 ## Props
 
-| props  	| default  	|  type 	| usage |
+| **props** 	| **default**  	|  **type** 	| **usage** |
 |---	|---	|---	|---  |
 |  expandable	|  true 	| boolean 	| Enable content to be expanded    |
 |  expandText 	|  "Read more" 	|  string 	|  Text to display when content is collapsed    |
 |  collapseText 	|   "Read less"	|  string 	| Text to display when content is expanded    |
-|  className 	|   null	|  string 	| CSS class applied to the expandable part |
-|  maxHeight 	|   :x:	|  integer 	| Max height in pixels for your collapsed content  |
+|  className 	|   :x:	|  string 	| CSS class applied to the expandable part |
+|  maxHeight 	|   100	|  integer 	| Max height in pixels for your collapsed content  |
 |  showIcon 	|   true	|  boolean 	| Whether the dropdown icon should be displayed    |
-|  onCollapse 	|  null 	|  func 	| Callback function triggered when content is collapsed    |
-|  onExpand 	|   null	|  func 	| Callback function triggered when content is expanded     |
+|  onCollapse 	|  :x: 	|  func 	| Callback function triggered when content is collapsed    |
+|  onExpand 	|   :x:	|  func 	| Callback function triggered when content is expanded     |
+|  darkMode 	|   false	|  boolean 	| Enabling dark mode on your content (black background)    |
 
 ## License
 
