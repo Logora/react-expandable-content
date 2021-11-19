@@ -1,10 +1,12 @@
 [![Npm Version](https://img.shields.io/npm/v/react-expandable-content.svg?style=flat-square)](https://www.npmjs.com/package/react-expandable-content) [![License](https://img.shields.io/npm/l/react-expandable-content.svg?style=flat-square)](https://github.com/Logora/react-expandable-content/blob/master/LICENSE.md) [![Downloads Per Week](https://img.shields.io/npm/dw/react-expandable-content.svg?style=flat-square)](https://npmcharts.com/compare/react-expandable-content)
 
 ## react-expandable-content
-
-![Alt text](react-expandable-content.gif) / ![](example.gif)
-
-React component to enable text collapse based on a certain height
+<p align="center">
+  React component to enable text collapse based on a certain height
+</p>
+<p align="center">
+  !(react-expandable-content.gif) / ![](example.gif)
+</p>
 
 ## Table of Contents
 
