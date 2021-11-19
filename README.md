@@ -29,7 +29,7 @@ yarn add react-expandable-content
 
 ExpandableContent can receive any HTML elements or React components as its children.
 
-```
+```javascript
 import React from 'react';
 import ExpandableContent from 'react-expandable-content';
 
