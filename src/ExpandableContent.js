@@ -3,9 +3,6 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import ArrowDownIcon from "./icons/ArrowDownIcon.svg";
 
-// TODO : Add textBackgroundColor props
-// TODO : Add unit tests
-
 const Container = styled.div`
     position: relative;
 `;
