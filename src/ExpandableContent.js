@@ -23,16 +23,16 @@ const ContentBody = styled.div`
 				left: 0;
 				right: 0;
 				pointer-events: none;
-				background-image: ${props => props.isDarkMode ? 
-					'linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 90%)'
-					:
-					'linear-gradient(to bottom, #bb1, #000 80%)'
-				}
+				background-image: ${props.isDarkMode ? 
+						'linear-gradient(to bottom, rgba(187, 187, 187, 0), rgba(0, 0, 0, 1) 90%)' 
+					: 
+						'linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 90%)'
+				};
 				width: 100%;
 				height: 5em;
 			}
 		`
-    }}
+  }}
 `;
 
 const LinkContainer = styled.div`
@@ -59,7 +59,7 @@ const Link = styled.div`
 	}
 `;
 
-const ExpandableContent = ({ children, expandable = true, expandText = "Read more", collapseText = "Read less", className, maxHeight = "100", showIcon = true, onCollapse = () => {}, onExpand = () => {}, isDarkMode = false}) => {
+const ExpandableContent = ({ children, expandable = true, expandText = "Read more", collapseText = "Read less", className, maxHeight = "100", showIcon = true, onCollapse = () => {}, onExpand = () => {}, darkMode = false}) => {
 	const [isExpanded, setIsExpanded] = useState(false);
 	const [contentHeight, setContentHeight] = useState(0);
 	const contentRef = useRef(null);
@@ -87,7 +87,7 @@ const ExpandableContent = ({ children, expandable = true, expandText = "Read mor
 
     return (
         <Container ref={contentRef}>
-            <ContentBody maxHeight={maxHeight} showExpandText={expandable && !isExpanded && contentHeight > maxHeight} isDarkMode={isDarkMode}>
+            <ContentBody maxHeight={maxHeight} showExpandText={expandable && !isExpanded && contentHeight > maxHeight} darkMode={darkMode}>
                 { children }
             </ContentBody>
 			{ expandable && contentHeight > maxHeight && (
