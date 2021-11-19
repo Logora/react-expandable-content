@@ -11,7 +11,7 @@ module.exports = {
     default: path.join(__dirname, '/examples/default.js')
   },
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'dist-example'),
     filename: '[name].js',
   },
   devServer: {

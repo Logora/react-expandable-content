@@ -1,10 +1,9 @@
 [![Npm Version](https://img.shields.io/npm/v/react-expandable-content.svg?style=flat-square)](https://www.npmjs.com/package/react-expandable-content) [![License](https://img.shields.io/npm/l/react-expandable-content.svg?style=flat-square)](https://github.com/Logora/react-expandable-content/blob/master/LICENSE.md) [![Downloads Per Week](https://img.shields.io/npm/dw/react-expandable-content.svg?style=flat-square)](https://npmcharts.com/compare/react-expandable-content)
 
 ## react-expandable-content
-
-![Alt text](react-expandable-content.gif) / ![](example.gif)
-
 React component to enable text collapse based on a certain height
+
+![](example.gif)
 
 ## Table of Contents
 
@@ -12,14 +11,6 @@ React component to enable text collapse based on a certain height
 - [Usage](#usage)
 - [Examples](#examples)
 - [Props](#props)
-  - [expandable](#expandable)
-  - [expandText](#expandtext)
-  - [collapseText](#collapsetext)
-  - [className](#classname)
-  - [maxHeight](#maxheight)
-  - [showIcon](#showIcon)
-  - [onCollapse](#oncollapse)
-  - [onExpand](#onexpand)
 - [Styling and Customization](#styling-and-customization)
 - [License](#license)
 - [Contributors](#contributors)
@@ -28,7 +19,7 @@ React component to enable text collapse based on a certain height
 
 Install via npm or yarn
 
-```
+```javascript
 npm install react-expandable-content --save
 
 yarn add react-expandable-content
@@ -38,7 +29,7 @@ yarn add react-expandable-content
 
 ExpandableContent can receive any HTML elements or React components as its children.
 
-```
+```javascript
 import React from 'react';
 import ExpandableContent from 'react-expandable-content';
 
@@ -64,17 +55,24 @@ export default App;
 
 ## Props
 
-| props  	| default  	|  type 	| usage |
+| **props** 	| **default**  	|  **type** 	| **usage** |
 |---	|---	|---	|---  |
 |  expandable	|  true 	| boolean 	| Enable content to be expanded    |
 |  expandText 	|  "Read more" 	|  string 	|  Text to display when content is collapsed    |
 |  collapseText 	|   "Read less"	|  string 	| Text to display when content is expanded    |
-|  className 	|   null	|  string 	| CSS class applied to the expandable part |
-|  maxHeight 	|   :x:	|  integer 	| Max height in pixels for your collapsed content  |
+|  className 	|   :x:	|  string 	| CSS class applied to the expandable part |
+|  maxHeight 	|   100	|  integer 	| Max height in pixels for your collapsed content  |
 |  showIcon 	|   true	|  boolean 	| Whether the dropdown icon should be displayed    |
-|  onCollapse 	|  null 	|  func 	| Callback function triggered when content is collapsed    |
-|  onExpand 	|   null	|  func 	| Callback function triggered when content is expanded     |
+|  onCollapse 	|  :x: 	|  func 	| Callback function triggered when content is collapsed    |
+|  onExpand 	|   :x:	|  func 	| Callback function triggered when content is expanded     |
+|  darkMode 	|   false	|  boolean 	| Enabling dark mode on your content (black background)    |
 
 ## License
 
 MIT
+
+## Contributors
+
+<a href="https://github.com/Logora/react-expandable-content/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Logora/react-expandable-content" />
+</a>
