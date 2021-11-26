@@ -1,6 +1,6 @@
 {
   "name": "react-expandable-content",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "React component to enable text collapse based on a certain height",
   "main": "./dist/index.js",
   "scripts": {
@@ -33,9 +33,9 @@
     "url": "https://github.com/Logora/react-expandable-content/issues"
   },
   "homepage": "https://github.com/Logora/react-expandable-content#readme",
-  "peerDependencies": {
-    "react": "~15 || ~16 || ~17",
-    "react-dom": "~15 || ~16 || ~17",
+  "dependecies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "styled-components": "^5.3.3"
   },
   "devDependencies": {
