@@ -5,6 +5,7 @@
   ],
   "plugins": [
     "css-modules-transform",
+    "inline-react-svg",
     "@babel/plugin-proposal-class-properties",
     "@babel/plugin-syntax-object-rest-spread"
   ]

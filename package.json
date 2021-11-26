@@ -1,6 +1,6 @@
 {
   "name": "react-expandable-content",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "React component to enable text collapse based on a certain height",
   "main": "./dist/index.js",
   "scripts": {
@@ -46,6 +46,7 @@
     "@svgr/webpack": "^5.5.0",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.2.3",
+    "babel-plugin-inline-react-svg": "^2.0.1",
     "babel-plugin-css-modules-transform": "^1.2.7",
     "coveralls": "^3.0.2",
     "cross-env": "^7.0.3",
